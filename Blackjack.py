@@ -76,13 +76,13 @@ def countHand(deck, hand, mode) -> int: #Adds value of the card to the deck
 
 def updateText(playerCanvas, dealerCanvas, playerText, dealerText, playerHand, dealerHand, mode): #updates text
         playerCanvas.itemconfig(playerText, text = str(countHand(deck, playerHand, mode="player")))
-        print(f"set player to {(countHand(deck, playerHand, mode="player"))}")
+        print(f"set player to {(countHand(deck, playerHand, mode='player'))}")
         if mode == "hidden":
             dealerCanvas.itemconfig(dealerText, text = str((countHand(deck, dealerHand, mode="dealer")[0])))
-            print(f"set dealer to {(countHand(deck, dealerHand, mode="dealer"))}")
+            print(f"set dealer to {(countHand(deck, dealerHand, mode='dealer'))}")
         elif mode == "visible":
             dealerCanvas.itemconfig(dealerText, text = str((countHand(deck, dealerHand, mode="dealer")[1])))
-            print(f"set dealer to {(countHand(deck, dealerHand, mode="dealer"))}")
+            print(f"set dealer to {(countHand(deck, dealerHand, mode='dealer'))}")
 
 def makeHand(allCards, playerHand, dealerHand): #generates a unique hand
     dealerHand = sample([card for card in allCards if card not in playerHand and card not in dealerHand], 2)
